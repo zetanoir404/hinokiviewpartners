@@ -1,0 +1,472 @@
+<!-- filename: hinokiview-partners.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HP · Hinokiview Partners LLP | CFO Advisory Services</title>
+
+  <meta name="description"
+    content="Hinokiview Partners LLP brings financial rigour, clarity, and accountability to ambitious businesses across India.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Hinokiview Partners LLP | CFO Advisory Services">
+  <meta property="og:description" content="Strategic financial leadership for businesses built to last.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- EB Garamond (body) + IBM Plex Sans (brand wordmark) -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{ margin:0; padding:0; box-sizing:border-box; }
+
+    :root{
+      --ink:#162A4B;          /* Primary Dark 60% */
+      --ink-mid:#3a4c68;
+      --ink-soft:#5a6b84;
+      --ink-muted:#8a97ab;
+      --rule:#cfd6df;
+      --rule-light:#e6eaf0;
+      --bg:#F8FAFC;           /* Light Background 30% */
+      --white:#ffffff;
+      --band:#002037;         /* darker navy CTA band */
+      --band-line:#123a55;    /* low-contrast curved lines on the darker band */
+    }
+
+    html{ scroll-behavior:smooth; }
+    body{ background:var(--white); color:var(--ink); font-family:"EB Garamond",serif;
+      font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased; }
+    a{ color:inherit; }
+
+    /* ---------- Nav ---------- */
+    nav{ position:fixed; inset:0 0 auto 0; z-index:200; height:64px; padding:0 72px;
+      display:flex; align-items:center; justify-content:space-between;
+      background:var(--white); border-bottom:1px solid var(--rule-light); }
+    /* Brand wordmark uses IBM Plex Sans (exact spec supplied) */
+    .nav-logo{
+      display:flex; align-items:center; gap:12px;
+      color:#000;
+      font-family:"IBM Plex Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size:18.6662px;
+      font-weight:400;
+      line-height:1.65;
+      letter-spacing:0;               /* removed so "Hinokiview" reads as one word */
+      text-decoration:none;
+    }
+    .logo-mark{
+      display:grid; place-items:center; width:34px; height:34px;
+      background:var(--ink); color:var(--white);
+      font-family:"IBM Plex Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight:600; font-size:14px;
+    }
+    /* em no longer changes colour/weight, so the wordmark stays a single solid word */
+    .nav-logo em,.f-brand em{ color:inherit; font-style:normal; font-weight:inherit; }
+
+    .nav-links{ display:flex; align-items:center; gap:34px; list-style:none; }
+    .nav-links a,.nav-cta{ color:var(--ink-mid); font-size:12px; letter-spacing:.12em;
+      text-decoration:none; text-transform:uppercase; transition:color .2s,opacity .2s; }
+    .nav-links a:hover,.nav-links a.active{ color:var(--ink); }
+    .nav-cta{ border-bottom:1px solid var(--ink); color:var(--ink); padding-bottom:2px; }
+    .nav-cta:hover{ opacity:.6; }
+    .menu-toggle{ display:none; border:0; background:transparent; color:var(--ink);
+      cursor:pointer; font-family:inherit; font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
+
+    /* ---------- Pages / routing ---------- */
+    .page{ display:none; }
+    .page.is-active{ display:block; animation:fade .35s ease; }
+    @keyframes fade{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:none; } }
+
+    /* ---------- Hero ---------- */
+    .hero{ min-height:100vh; padding-top:64px; display:grid; grid-template-rows:1fr auto; }
+    .hero-body{ display:flex; align-items:center; padding:80px 72px; border-bottom:1px solid var(--rule); }
+    .hero-content{ max-width:800px; }
+    .hero-kicker,.sec-label{ display:flex; align-items:center; gap:16px; margin-bottom:28px;
+      color:var(--ink-muted); font-size:12px; letter-spacing:.2em; text-transform:uppercase; }
+    .hero-kicker::before,.sec-label::before{ content:""; display:block; width:32px; height:1px; background:var(--rule); }
+    .hero-h1{ margin-bottom:36px; font-size:clamp(54px,7vw,86px); font-weight:400; letter-spacing:-.02em; line-height:1; }
+    .hero-h1 em,.band-h em,.page-hero-h em{ color:var(--ink-soft); font-style:italic; }
+    .hero-p{ max-width:560px; margin-bottom:44px; padding-left:24px; border-left:1px solid var(--rule);
+      color:var(--ink-soft); font-size:18px; line-height:1.75; }
+    .hero-actions{ display:flex; align-items:center; gap:32px; }
+
+    .btn-dark,.btn-white{ display:inline-block; padding:13px 30px; font-size:12px;
+      letter-spacing:.14em; text-decoration:none; text-transform:uppercase; transition:opacity .2s; }
+    .btn-dark{ background:var(--ink); color:var(--white); }
+    .btn-dark:hover,.btn-white:hover{ opacity:.75; }
+    .btn-text{ display:flex; align-items:center; gap:8px; color:var(--ink-soft); font-size:12px;
+      letter-spacing:.14em; text-decoration:none; text-transform:uppercase; transition:color .2s; cursor:pointer; }
+    .btn-text:hover{ color:var(--ink); }
+
+    .hero-rule{ display:grid; grid-template-columns:repeat(4,1fr); }
+    .hero-stat{ padding:28px 36px 28px 72px; border-right:1px solid var(--rule-light); }
+    .hero-stat:last-child{ border-right:0; }
+    .stat-n{ margin-bottom:4px; font-size:36px; line-height:1; }
+    .stat-l{ color:var(--ink-muted); font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+
+    /* ---------- Generic sections ---------- */
+    .sec{ padding:96px 72px; }
+    .sec-alt{ background:var(--bg); }
+    .sec-h{ margin-bottom:16px; font-size:clamp(38px,4vw,54px); font-weight:400; letter-spacing:-.01em; line-height:1.05; }
+    .sec-sub{ max-width:580px; color:var(--ink-soft); font-size:17px; line-height:1.8; }
+
+    /* ---------- Service / approach detail page ---------- */
+    .page-hero{ padding:128px 72px 64px; background:var(--bg); border-bottom:1px solid var(--rule); }
+    .page-hero-h{ margin:18px 0; font-size:clamp(40px,5vw,68px); font-weight:400; letter-spacing:-.02em; line-height:1.02; }
+    .page-hero-p{ max-width:640px; color:var(--ink-soft); font-size:18px; line-height:1.75; }
+    .scope-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 48px; margin-top:48px; }
+    .scope-item{ display:flex; gap:12px; padding:14px 0; border-bottom:1px solid var(--rule-light);
+      color:var(--ink-soft); font-size:16px; }
+    .scope-item::before{ content:"—"; color:var(--ink-muted); }
+    .back-link{ color:var(--ink-muted); font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+      text-decoration:none; cursor:pointer; }
+    .back-link:hover{ color:var(--ink); }
+
+    /* ---------- Principles (Approach page) ---------- */
+    .principles-grid{ display:grid; grid-template-columns:repeat(3,1fr); margin-top:64px; border-top:1px solid var(--rule); }
+    .principle{ padding:42px 40px 42px 0; border-right:1px solid var(--rule-light); }
+    .principle:nth-child(3n){ border-right:0; padding-right:0; }
+    .principle:nth-child(n+4){ border-top:1px solid var(--rule-light); }
+    .p-num{ margin-bottom:24px; color:var(--ink-muted); font-size:14px; font-style:italic; }
+    .p-title{ margin-bottom:14px; font-size:25px; font-weight:400; line-height:1.15; }
+    .p-body{ color:var(--ink-soft); font-size:16px; line-height:1.75; }
+
+    /* ---------- Blue CTA band with low-contrast curved lines ---------- */
+    .band{ position:relative; overflow:hidden; padding:96px 72px; background:var(--band); }
+    .band-lines{ position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+    .band-lines path{ fill:none; stroke:var(--band-line); stroke-width:1.5; opacity:.5; }
+    .band-inner{ position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .band-h{ color:var(--white); font-size:clamp(42px,5vw,64px); font-weight:400; letter-spacing:-.01em; line-height:1.02; }
+    .band-h em{ color:rgba(255,255,255,.55); }
+    .band-right p{ margin-bottom:34px; color:rgba(255,255,255,.7); font-size:17px; line-height:1.8; }
+    .btn-white{ background:var(--white); color:var(--ink); }
+
+    /* ---------- Footer ---------- */
+    footer{ padding:72px 72px 36px; background:var(--ink); border-top:1px solid rgba(255,255,255,.08); }
+    .footer-top{ display:grid; grid-template-columns:2.2fr 1fr 1fr 1fr; gap:56px; padding-bottom:52px;
+      border-bottom:1px solid rgba(255,255,255,.08); }
+    /* Footer wordmark: same IBM Plex Sans, white for legibility on dark navy */
+    .f-brand{
+      margin-bottom:6px; color:var(--white);
+      font-family:"IBM Plex Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size:18.6662px;
+      font-weight:400;
+      line-height:1.65;
+      letter-spacing:0;               /* removed */
+    }
+    .f-brand em{ color:inherit; font-style:normal; font-weight:inherit; }
+    .f-tagline,.f-col-h{ color:rgba(255,255,255,.4); font-size:11px; letter-spacing:.16em; text-transform:uppercase; }
+    .f-tagline{ margin-bottom:22px; }
+    .f-about{ max-width:310px; color:rgba(255,255,255,.55); font-size:16px; line-height:1.75; }
+    .f-col-h{ margin-bottom:18px; }
+    .f-col ul{ list-style:none; }
+    .f-col li{ margin-bottom:10px; }
+    .f-col a,.f-row span:last-child{ color:rgba(255,255,255,.6); font-size:15px; text-decoration:none; cursor:pointer; }
+    .f-col a:hover{ color:var(--white); }
+    .f-row{ display:flex; gap:14px; margin-bottom:10px; }
+    .f-row span:first-child{ min-width:48px; padding-top:2px; color:rgba(255,255,255,.35);
+      font-size:11px; letter-spacing:.1em; text-transform:uppercase; }
+    .footer-bottom{ display:flex; align-items:center; justify-content:space-between; padding-top:30px; }
+    .footer-bottom p,#clock{ color:rgba(255,255,255,.35); font-size:12px; letter-spacing:.06em; }
+    .legal-disclaimer{ max-width:1000px; margin:32px auto 0; padding:24px 20px 0;
+      border-top:1px solid rgba(255,255,255,.08); color:rgba(255,255,255,.42);
+      font-size:.8rem; line-height:1.55; text-align:center; }
+
+    /* ---------- Responsive ---------- */
+    @media(max-width:1100px){
+      nav,.hero-body,.sec,.band,.page-hero,footer{ padding-left:40px; padding-right:40px; }
+      .hero-stat{ padding-left:40px; }
+      .band-inner,.footer-top{ grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:768px){
+      nav{ padding:0 20px; }
+      .menu-toggle{ display:block; }
+      .nav-links{ position:absolute; top:64px; left:0; right:0; display:none; flex-direction:column;
+        align-items:flex-start; gap:20px; padding:24px 20px; background:var(--white);
+        border-bottom:1px solid var(--rule-light); }
+      .nav-links.is-open{ display:flex; }
+      .hero-body,.page-hero{ padding:64px 20px; }
+      .page-hero{ padding-top:110px; }
+      .hero-h1{ font-size:clamp(48px,14vw,70px); }
+      .hero-actions{ align-items:flex-start; flex-direction:column; gap:22px; }
+      .hero-rule{ grid-template-columns:1fr 1fr; }
+      .hero-stat{ padding:24px 20px; }
+      .hero-stat:nth-child(2){ border-right:0; }
+      .hero-stat:nth-child(-n+2){ border-bottom:1px solid var(--rule-light); }
+      .sec,.band,footer{ padding-left:20px; padding-right:20px; }
+      .principles-grid,.band-inner,.footer-top,.scope-grid{ grid-template-columns:1fr; }
+      .principle,.principle:nth-child(n+4){ border-top:0; border-right:0; border-bottom:1px solid var(--rule-light); padding:36px 0; }
+      .principle:last-child{ border-bottom:0; }
+      .footer-bottom{ flex-direction:column; gap:10px; text-align:center; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav aria-label="Main navigation">
+    <a class="nav-logo" href="#/home" data-link>
+      <span class="logo-mark" aria-hidden="true">HP</span>
+      Hinokiview Partners LLP
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Open navigation">Menu</button>
+
+    <ul class="nav-links">
+      <li><a href="#/cfo" data-link>CFO Advisory</a></li>
+      <li><a href="#/fpa" data-link>FP&amp;A</a></li>
+      <li><a href="#/ops" data-link>Financial Operations</a></li>
+      <li><a href="#/approach" data-link>Approach</a></li>
+      <li><a class="nav-cta" href="mailto:info@hinokiview.com?subject=Arrange%20a%20meeting">Arrange a meeting</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- ============ HOME PAGE (hero + CTA only) ============ -->
+    <div class="page is-active" id="page-home">
+      <section class="hero">
+        <div class="hero-body">
+          <div class="hero-content">
+            <p class="hero-kicker">Fractional CFO &amp; Financial Advisory</p>
+            <h1 class="hero-h1">Financial leadership<br>for <em>ambitious</em><br>businesses.</h1>
+            <p class="hero-p">
+              Hinokiview Partners LLP exists for one reason — to bring financial rigour, clarity,
+              and accountability to businesses that deserve better than guesswork. Every rupee,
+              every decision, every report. Accountable.
+            </p>
+            <div class="hero-actions">
+              <a class="btn-dark" href="mailto:info@hinokiview.com?subject=Arrange%20a%20meeting">Arrange a meeting</a>
+              <a class="btn-text" href="#/cfo" data-link>Our services <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-rule">
+          <div class="hero-stat"><div class="stat-n">CFO</div><div class="stat-l">Dedicated expertise</div></div>
+          <div class="hero-stat"><div class="stat-n">FP&amp;A</div><div class="stat-l">Planning &amp; analysis</div></div>
+          <div class="hero-stat"><div class="stat-n">360°</div><div class="stat-l">Finance coverage</div></div>
+          <div class="hero-stat"><div class="stat-n">Day 1</div><div class="stat-l">Focused practice</div></div>
+        </div>
+      </section>
+
+      <!-- Blue band with curved lines -->
+      <section class="band">
+        <svg class="band-lines" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-50 120 C300 20 700 260 1250 90"></path>
+          <path d="M-50 220 C350 120 750 360 1250 190"></path>
+          <path d="M-50 320 C300 240 800 440 1250 300"></path>
+        </svg>
+        <div class="band-inner">
+          <h2 class="band-h">The financial clarity<br>your business<br><em>has been missing.</em></h2>
+          <div class="band-right">
+            <p>Most growing businesses in India operate without a senior finance voice at the table. That gap costs more than you realise — in capital structure, pricing mistakes, poor cash visibility, and missed opportunities. Hinokiview Partners exists to close it.</p>
+            <a class="btn-white" href="mailto:info@hinokiview.com?subject=Consultation">Speak with our team</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ APPROACH PAGE (How we work) ============ -->
+    <div class="page" id="page-approach">
+      <section class="page-hero">
+        <a class="back-link" href="#/home" data-link><span aria-hidden="true">←</span> Back to home</a>
+        <p class="sec-label" style="margin-top:20px">Our Approach</p>
+        <h1 class="page-hero-h">How we <em>work</em></h1>
+        <p class="page-hero-p">
+          We do not believe in generic advice or templated deliverables. Every engagement is built
+          around the specific needs, stage, and ambitions of your business.
+        </p>
+      </section>
+      <section class="sec">
+        <div class="principles-grid">
+          <article class="principle"><p class="p-num">I</p><h3 class="p-title">Rigour as a standard</h3><p class="p-body">Institutional-grade financial discipline on every engagement — the analytical standards demanded by investment committees and boards, brought to your P&amp;L and forecasts.</p></article>
+          <article class="principle"><p class="p-num">II</p><h3 class="p-title">Embedded partnership</h3><p class="p-body">We work inside your business, not around it — understanding your model, stakeholders, and constraints so advice is grounded in operational reality.</p></article>
+          <article class="principle"><p class="p-num">III</p><h3 class="p-title">Clarity of communication</h3><p class="p-body">Finance should be a tool for decision-making, not a barrier to it. We translate complex data into clear, actionable narratives.</p></article>
+          <article class="principle"><p class="p-num">IV</p><h3 class="p-title">Accountability, always</h3><p class="p-body">Every engagement has a named lead, defined scope, and a clear line of accountability — no handoffs, no vague retainers.</p></article>
+          <article class="principle"><p class="p-num">V</p><h3 class="p-title">Right-sized engagement</h3><p class="p-body">Whether you need eight hours a month or a near-full-time finance lead, we scale precisely to your stage and budget.</p></article>
+          <article class="principle"><p class="p-num">VI</p><h3 class="p-title">Every rupee accounted for</h3><p class="p-body">Our founding principle — the precision of a listed company's finance function, brought to every business we serve.</p></article>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ CFO SERVICES PAGE ============ -->
+    <div class="page" id="page-cfo">
+      <section class="page-hero">
+        <a class="back-link" href="#/home" data-link><span aria-hidden="true">←</span> Back to home</a>
+        <p class="sec-label" style="margin-top:20px">Service 01</p>
+        <h1 class="page-hero-h">Fractional <em>CFO</em> Advisory</h1>
+        <p class="page-hero-p">Senior financial leadership on a fractional basis — strategy, cash, risk, and stakeholder relations without the full-time overhead.</p>
+      </section>
+      <section class="sec">
+        <h2 class="sec-h" style="font-size:clamp(28px,3vw,38px)">Scope of engagement</h2>
+        <div class="scope-grid">
+          <div class="scope-item">Strategic business planning and goal alignment</div>
+          <div class="scope-item">Capital structure and cash management</div>
+          <div class="scope-item">Risk identification and mitigation</div>
+          <div class="scope-item">Pricing strategy</div>
+          <div class="scope-item">Stakeholder, investor and board communication</div>
+          <div class="scope-item">Fundraising support</div>
+          <div class="scope-item">Monthly or quarterly board reporting</div>
+        </div>
+        <div style="margin-top:48px"><a class="btn-dark" href="mailto:info@hinokiview.com?subject=CFO%20Advisory%20Enquiry">Enquire about CFO Advisory</a></div>
+      </section>
+    </div>
+
+    <!-- ============ FP&A SERVICES PAGE ============ -->
+    <div class="page" id="page-fpa">
+      <section class="page-hero">
+        <a class="back-link" href="#/home" data-link><span aria-hidden="true">←</span> Back to home</a>
+        <p class="sec-label" style="margin-top:20px">Service 02</p>
+        <h1 class="page-hero-h"><em>FP&amp;A</em> Services</h1>
+        <p class="page-hero-p">Rigorous financial planning, forecasting, and analysis that turns your numbers into decisions.</p>
+      </section>
+      <section class="sec">
+        <h2 class="sec-h" style="font-size:clamp(28px,3vw,38px)">Scope of engagement</h2>
+        <div class="scope-grid">
+          <div class="scope-item">Budgeting, forecasting and variance analysis</div>
+          <div class="scope-item">Financial modelling and scenario planning</div>
+          <div class="scope-item">Cash flow and runway management</div>
+          <div class="scope-item">KPI design, dashboards and reporting</div>
+          <div class="scope-item">Investor and board reporting packs</div>
+          <div class="scope-item">Month-end management accounts</div>
+        </div>
+        <div style="margin-top:48px"><a class="btn-dark" href="mailto:info@hinokiview.com?subject=FP%26A%20Services%20Enquiry">Enquire about FP&amp;A</a></div>
+      </section>
+    </div>
+
+    <!-- ============ FINANCIAL OPERATIONS PAGE ============ -->
+    <div class="page" id="page-ops">
+      <section class="page-hero">
+        <a class="back-link" href="#/home" data-link><span aria-hidden="true">←</span> Back to home</a>
+        <p class="sec-label" style="margin-top:20px">Service 03</p>
+        <h1 class="page-hero-h">Financial <em>Operations</em></h1>
+        <p class="page-hero-p">Audit-ready, insight-driven bookkeeping — not just compliance, but the financial foundation every scaling business needs.</p>
+      </section>
+      <section class="sec">
+        <h2 class="sec-h" style="font-size:clamp(28px,3vw,38px)">Scope of engagement</h2>
+        <div class="scope-grid">
+          <div class="scope-item">Categorised and reconciled transactions</div>
+          <div class="scope-item">AP/AR oversight and cash flow optimisation</div>
+          <div class="scope-item">Payroll recording and cost allocation</div>
+          <div class="scope-item">GST compliance support</div>
+          <div class="scope-item">Tally, Zoho and QuickBooks integration</div>
+          <div class="scope-item">Audit-ready documentation</div>
+        </div>
+        <div style="margin-top:48px"><a class="btn-dark" href="mailto:info@hinokiview.com?subject=Financial%20Operations%20Enquiry">Enquire about Financial Operations</a></div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="footer-contact">
+    <div class="footer-top">
+      <div>
+        <div class="f-brand">Hinokiview Partners LLP</div>
+        <div class="f-tagline">Every rupee accounted for</div>
+        <p class="f-about">A fractional CFO and financial advisory firm providing strategic financial leadership to ambitious businesses across India.</p>
+      </div>
+      <div class="f-col">
+        <p class="f-col-h">Services</p>
+        <ul>
+          <li><a href="#/cfo" data-link>Fractional CFO Advisory</a></li>
+          <li><a href="#/fpa" data-link>FP&amp;A Services</a></li>
+          <li><a href="#/ops" data-link>Financial Operations</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <p class="f-col-h">Navigate</p>
+        <ul>
+          <li><a href="#/home" data-link>Home</a></li>
+          <li><a href="#/approach" data-link>Our approach</a></li>
+          <li><a href="mailto:info@hinokiview.com?subject=Contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <p class="f-col-h">Contact</p>
+        <div class="f-row"><span>Email</span><span><a href="mailto:info@hinokiview.com">info@hinokiview.com</a></span></div>
+        <div class="f-row"><span>Office</span><span>Ambala, Haryana, India</span></div>
+        <div class="f-row"><span>Hours</span><span>Monday–Saturday, 09:00–18:30 IST</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Hinokiview Partners LLP · Ambala, Haryana, India</p>
+      <span id="clock" aria-hidden="true"></span>
+    </div>
+    <p class="legal-disclaimer">
+      Hinokiview Partners LLP markets and delivers its professional services under this brand. All legal
+      engagements, professional contracts, and financial transactions, including billing and payments, are
+      executed exclusively in the legal name of Hinokiview Partners LLP. Hinokiview Partners LLP is not a
+      registered CA firm and does not provide public accounting or attest services.
+    </p>
+  </footer>
+
+  <script>
+    // Code Generated by Sidekick is for learning and experimentation purposes only.
+
+    /* ---------- Mobile menu ---------- */
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    function closeMenu() {
+      navLinks.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation");
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    });
+
+    /* ---------- Client-side hash router ---------- */
+    // Map each URL hash to a page element id. Unknown routes fall back to home.
+    const routes = {
+      "/home": "page-home",
+      "/approach": "page-approach",
+      "/cfo": "page-cfo",
+      "/fpa": "page-fpa",
+      "/ops": "page-ops"
+    };
+
+    function router() {
+      // Read the path after '#', e.g. "#/approach" -> "/approach"
+      const path = location.hash.replace("#", "") || "/home";
+      const pageId = routes[path] || "page-home";
+
+      // Show only the matching page, hide the rest
+      document.querySelectorAll(".page").forEach((p) => {
+        p.classList.toggle("is-active", p.id === pageId);
+      });
+
+      // Highlight the active nav link so users know where they are
+      document.querySelectorAll(".nav-links a[data-link]").forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === "#" + path);
+      });
+
+      // Start each page at the top, like a real navigation
+      window.scrollTo({ top: 0, behavior: "auto" });
+      closeMenu();
+    }
+
+    // Run the router on first load and whenever the hash changes
+    window.addEventListener("hashchange", router);
+    window.addEventListener("DOMContentLoaded", router);
+
+    /* ---------- Live IST clock in footer ---------- */
+    const clock = document.querySelector("#clock");
+
+    function updateClock() {
+      const currentTime = new Date().toLocaleTimeString("en-IN", {
+        timeZone: "Asia/Kolkata",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+      });
+      clock.textContent = `${currentTime} IST`;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+</html>
