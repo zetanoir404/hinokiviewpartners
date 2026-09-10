@@ -254,3 +254,4 @@ footer{ padding:72px 72px 36px; background:var(--ink); border-top:1px solid rgba
   letter-spacing:-.02em;
   line-height:1;
 }
+.hero{ background:lime !important; }
