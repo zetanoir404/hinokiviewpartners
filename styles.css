@@ -70,6 +70,9 @@ nav{ position:fixed; inset:0 0 auto 0; z-index:200; height:64px; padding:0 72px;
 .intro-statement em{ color:var(--ink-soft); font-style:italic; }
 
 /* ---------- What we do cards ---------- */
+.what-we-do{ text-align:center; }
+.what-we-do .sec-label{ flex-direction:column; align-items:center; gap:12px; margin-bottom:24px; }
+.what-we-do .sec-label::before{ order:-1; }   /* puts the dash line ABOVE the words */
 .what-we-do .sec-h{ margin-bottom:40px; }
 .wwd-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
 .wwd-card{ display:flex; flex-direction:column; padding:36px; background:var(--white);
