@@ -23,10 +23,7 @@ nav{ position:fixed; inset:0 0 auto 0; z-index:200; height:64px; padding:0 72px;
 .nav-logo{ display:flex; align-items:center; gap:12px; color:#000;
   font-family:"IBM Plex Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size:19px; font-weight:500; line-height:1.65; text-decoration:none; }
-.logo-mark{ display:grid; place-items:center; width:34px; height:34px;
-  background:var(--ink); color:var(--white);
-  font-family:"IBM Plex Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight:600; font-size:14px; }
+.logo-mark{ width:34px; height:34px; object-fit:contain; display:block; }
 .nav-logo em,.f-brand em{ color:inherit; font-style:normal; font-weight:inherit; }
 .nav-links{ display:flex; align-items:center; gap:34px; list-style:none; }
 .nav-links a,.nav-cta{ color:var(--ink-mid); font-size:13px; letter-spacing:.12em;
