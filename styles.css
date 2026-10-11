@@ -71,12 +71,12 @@ nav{ position:fixed; inset:0 0 auto 0; z-index:200; height:64px; padding:0 72px;
 .what-we-do .sec-label{ flex-direction:column; align-items:center; gap:12px; margin-bottom:24px; }
 .what-we-do .sec-label::before{ order:-1; }   /* puts the dash line ABOVE the words */
 .what-we-do .sec-h{ margin-bottom:40px; }
-.wwd-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-.wwd-card{ display:flex; flex-direction:column; padding:36px; background:var(--white);
+.wwd-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.wwd-card{ display:flex; flex-direction:column; padding:24px; background:var(--white);
   border:1px solid var(--rule-light); transition:border-color .2s, transform .2s; }
 .wwd-card:hover{ border-color:var(--rule); transform:translateY(-2px); }
-.wwd-title{ margin-bottom:14px; font-size:26px; font-weight:400; line-height:1.15; }
-.wwd-tagline{ flex-grow:1; margin-bottom:24px; color:var(--ink-soft); font-size:17px; line-height:1.7; }
+.wwd-title{ margin-bottom:10px; font-size:23px; font-weight:400; line-height:1.15; }
+.wwd-tagline{ flex-grow:1; margin-bottom:18px; color:var(--ink-soft); font-size:16px; line-height:1.7; }
 .wwd-link{ color:var(--ink); font-family:"IBM Plex Sans",Helvetica,Arial,sans-serif;
   font-size:12px; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; }
 .wwd-link span{ display:inline-block; margin-left:6px; transition:margin-left .2s; }
